@@ -1,0 +1,16 @@
+D:\02-VS_Projects\Serv\Serv\bin\Debug\Serv.exe
+D:\02-VS_Projects\Serv\Serv\bin\Debug\Serv.pdb
+D:\02-VS_Projects\Serv\Serv\bin\Debug\MySql.Data.dll
+D:\02-VS_Projects\Serv\Serv\bin\Debug\MySql.Data.xml
+D:\02-VS_Projects\Serv\Serv\obj\x86\Debug\Serv.csprojResolveAssemblyReference.cache
+D:\02-VS_Projects\Serv\Serv\obj\x86\Debug\Serv.csproj.CoreCompileInputs.cache
+D:\02-VS_Projects\Serv\Serv\obj\x86\Debug\Serv.exe
+D:\02-VS_Projects\Serv\Serv\obj\x86\Debug\Serv.pdb
+D:\02-VS_Projects\TankServer\Serv\bin\Debug\Serv.exe
+D:\02-VS_Projects\TankServer\Serv\bin\Debug\Serv.pdb
+D:\02-VS_Projects\TankServer\Serv\bin\Debug\MySql.Data.dll
+D:\02-VS_Projects\TankServer\Serv\bin\Debug\MySql.Data.xml
+D:\02-VS_Projects\TankServer\Serv\obj\x86\Debug\Serv.csprojResolveAssemblyReference.cache
+D:\02-VS_Projects\TankServer\Serv\obj\x86\Debug\Serv.csproj.CoreCompileInputs.cache
+D:\02-VS_Projects\TankServer\Serv\obj\x86\Debug\Serv.exe
+D:\02-VS_Projects\TankServer\Serv\obj\x86\Debug\Serv.pdb
