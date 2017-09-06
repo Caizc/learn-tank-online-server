@@ -9,7 +9,7 @@ public partial class HandleConnMsg
     // 协议参数：无
     public void MsgHeatBeat(Conn conn, ProtocolBase protoBase)
     {
-        conn.lastTickTime = Sys.GetTimeStamp();
+        conn.lastTickTime = Util.GetTimeStamp();
         Console.WriteLine("[更新心跳时间]" + conn.GetAdress());
     }
 

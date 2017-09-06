@@ -60,7 +60,7 @@ public class Conn
         buffCount = 0;
 
         // 心跳处理
-        lastTickTime = Sys.GetTimeStamp();
+        lastTickTime = Util.GetTimeStamp();
     }
 
     /// <summary>

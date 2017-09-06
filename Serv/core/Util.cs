@@ -1,9 +1,9 @@
 using System;
 
 /// <summary>
-/// 系统工具类
+/// 工具类
 /// </summary>
-public class Sys
+public class Util
 {
     /// <summary>
     /// 获取当前时间戳

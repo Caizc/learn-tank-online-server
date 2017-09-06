@@ -80,7 +80,7 @@ public partial class HandlePlayerMsg
         player.tempData.posX = posX;
         player.tempData.posY = posY;
         player.tempData.posZ = posZ;
-        player.tempData.lastUpdateTime = Sys.GetTimeStamp();
+        player.tempData.lastUpdateTime = Util.GetTimeStamp();
 
         // 广播
         ProtocolBytes protocolRet = new ProtocolBytes();
@@ -153,12 +153,12 @@ public partial class HandlePlayerMsg
 
         // 作弊校验
         long lastShootTime = player.tempData.lastShootTime;
-        if (Sys.GetTimeStamp() - lastShootTime < 1)
+        if (Util.GetTimeStamp() - lastShootTime < 1)
         {
             Console.WriteLine("MsgHit开炮作弊 " + player.id);
             return;
         }
-        player.tempData.lastShootTime = Sys.GetTimeStamp();
+        player.tempData.lastShootTime = Util.GetTimeStamp();
 
         // 更多作弊校验
 

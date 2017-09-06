@@ -362,7 +362,7 @@ public class ServNet
     {
         // Console.WriteLine ("[主定时器执行]");
 
-        long timeNow = Sys.GetTimeStamp();
+        long timeNow = Util.GetTimeStamp();
 
         foreach (Conn conn in conns)
         {
