@@ -197,4 +197,46 @@ public partial class HandlePlayerMsg
         //胜负判断
         room.UpdateWin();
     }
+
+    // TODO: 飞船单位同步
+    /// <summary>
+    /// 飞船单位同步
+    /// </summary>
+    /// <param name="player"></param>
+    /// <param name="protoBase"></param>
+    public void MsgUpdateShipInfo(Player player, ProtocolBase protoBase)
+    {
+        // 获取数值
+        int start = 0;
+        ProtocolBytes protocol = (ProtocolBytes) protoBase;
+        string protoName = protocol.GetString(start, ref start);
+
+        float movX = protocol.GetFloat(start, ref start);
+        float movY = protocol.GetFloat(start, ref start);
+        float rotX = protocol.GetFloat(start, ref start);
+        float rotY = protocol.GetFloat(start, ref start);
+
+        // 获取房间
+        if (player.tempData.status != PlayerTempData.Status.Fight)
+        {
+            return;
+        }
+
+        Room room = player.tempData.room;
+
+        // 作弊校验
+//        player.tempData.posX = posX;
+//        player.tempData.posY = posY;
+//        player.tempData.lastUpdateTime = Util.GetTimeStamp();
+
+        // 广播
+        ProtocolBytes protocolRet = new ProtocolBytes();
+        protocolRet.AddString("UpdateUnitInfo");
+        protocolRet.AddString(player.id);
+        protocolRet.AddFloat(movX);
+        protocolRet.AddFloat(movY);
+        protocolRet.AddFloat(rotX);
+        protocolRet.AddFloat(rotY);
+        room.Broadcast(protocolRet);
+    }
 }
