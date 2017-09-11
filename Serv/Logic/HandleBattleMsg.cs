@@ -231,7 +231,7 @@ public partial class HandlePlayerMsg
 
         // 广播
         ProtocolBytes protocolRet = new ProtocolBytes();
-        protocolRet.AddString("UpdateUnitInfo");
+        protocolRet.AddString("UpdateShipInfo");
         protocolRet.AddString(player.id);
         protocolRet.AddFloat(movX);
         protocolRet.AddFloat(movY);
