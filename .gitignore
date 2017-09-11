@@ -35,4 +35,7 @@ sysinfo.txt
 
 .DS_Store
 
+# Rider
+.idea/
+
 
