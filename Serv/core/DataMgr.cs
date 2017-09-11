@@ -35,7 +35,7 @@ public class DataMgr
     {
         // TODO: MySQL 数据库连接信息
         string connStr = "Database=game;Data Source=127.0.0.1;";
-        connStr += "User Id=root;Password=123ZXC;port=3306";
+        connStr += "User Id=root;Password=123zxc;port=3306";
         sqlConn = new MySqlConnection(connStr);
 
         try
