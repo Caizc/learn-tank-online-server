@@ -202,15 +202,15 @@ public partial class HandlePlayerMsg
     /// <summary>
     /// 飞船单位同步
     /// </summary>
-    /// <param name="player"></param>
-    /// <param name="protoBase"></param>
     public void MsgUpdateShipInfo(Player player, ProtocolBase protoBase)
     {
-        // 获取数值
         int start = 0;
         ProtocolBytes protocol = (ProtocolBytes) protoBase;
+
+        // 获取协议名称
         string protoName = protocol.GetString(start, ref start);
 
+        // 获取数值
         float movX = protocol.GetFloat(start, ref start);
         float movY = protocol.GetFloat(start, ref start);
         float rotX = protocol.GetFloat(start, ref start);
@@ -231,12 +231,30 @@ public partial class HandlePlayerMsg
 
         // 广播
         ProtocolBytes protocolRet = new ProtocolBytes();
-        protocolRet.AddString("UpdateShipInfo");
+        protocolRet.AddString(protoName);
         protocolRet.AddString(player.id);
         protocolRet.AddFloat(movX);
         protocolRet.AddFloat(movY);
         protocolRet.AddFloat(rotX);
         protocolRet.AddFloat(rotY);
         room.Broadcast(protocolRet);
+    }
+
+    // TODO: 处理 TrueSync 消息
+    /// <summary>
+    /// 广播 TrueSync 消息
+    /// </summary>
+    public void MsgTrueSyncData(Player player, ProtocolBase protoBase)
+    {
+        // 获取房间
+        if (player.tempData.status != PlayerTempData.Status.Fight)
+        {
+            return;
+        }
+
+        Room room = player.tempData.room;
+
+        // 将 TrueSync 消息包原封不动地转发/广播到同一个房间中的所有玩家
+        room.Broadcast(protoBase);
     }
 }
