@@ -257,4 +257,13 @@ public partial class HandlePlayerMsg
         // 将 TrueSync 消息包原封不动地转发/广播到同一个房间中的所有玩家
         room.Broadcast(protoBase);
     }
+
+    /// <summary>
+    /// Ping 消息
+    /// </summary>
+    public void MsgPing(Player player, ProtocolBase protoBase)
+    {
+        // 将 Ping 消息包发回原玩家客户端
+        player.Send(protoBase);
+    }
 }
